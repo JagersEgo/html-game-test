@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <!-- Custom PreHead code is injected here -->
+    
+
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -8,10 +11,16 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta charset="utf-8"/>
 
+        <!-- Builtin injector for disabling cache -->
         <meta http-equiv="pragma" content="no-cache"/>
 
+        <!-- Set the title bar of the page -->
         <title>Created with GameMaker</title>
 
+        <!-- Custom PreStyle code is injected here -->
+        
+
+        <!-- Set the background colour of the document -->
         <style>
             body {
                 background: #0;
@@ -22,7 +31,7 @@
             }
 
             canvas {
-                image-rendering: pixelated; /* Force nearest-neighbor scaling */
+                image-rendering: optimizeSpeed;
                 -webkit-interpolation-mode: nearest-neighbor;
                 -ms-touch-action: none;
                 touch-action: none;
@@ -30,23 +39,21 @@
                 padding: 0px;
                 border: 0px;
             }
-
             :-webkit-full-screen #canvas {
                 width: 100%;
                 height: 100%;
             }
-
             :-webkit-full-screen {
                 width: 100%;
                 height: 100%;
             }
-
+            
+            /* Custom Runner Styles */
             div.gm4html5_div_class {
                 margin: 0px;
                 padding: 0px;
                 border: 0px;
             }
-
             div.gm4html5_login {
                 padding: 20px;
                 position: absolute;
@@ -56,47 +63,57 @@
                 border-radius: 15px;
                 box-shadow: #101010 20px 20px 40px;
             }
-
             div.gm4html5_cancel_button {
                 float: right;
             }
-
             div.gm4html5_login_button {
                 float: left;
             }
-
             div.gm4html5_login_header {
                 text-align: center;
             }
+            /* END - Custom Runner Styles */
+            
         </style>
 
+        <!-- Custom PostStyle code is injected here -->
+        
+
+        <!-- Builtin injector for injecting flurry analytics code -->
+        
     </head>
+
+    <!-- Custom PostHead code is injected here -->
+    
+
+    <!-- Custom PreBody code is injected here -->
+    
 
     <body>
         <div class="gm4html5_div_class" id="gm4html5_div_id">
-            <canvas id="canvas" width="1280" height="720">
+            
+            <!-- Builtin injector for splash screen -->
+            <img src="html5game/splash.png" id="GM4HTML5_loadingscreen" alt="GameMaker:HTML5 loading screen" style="display:none;"/>
+
+            <!-- Create the canvas element the game draws to -->
+            <canvas id="canvas" width="1280" height="720" >
                 <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
         </div>
 
-        <script type="text/javascript" src="html5game/TicTacToeTeam.js?cachebust=2013717425"></script>
+        <!-- Run the game code -->
+        <script type="text/javascript" src="html5game/TicTacToeTeam.js?cachebust=640638418"></script>
 
-        <script>
-            // Enforce nearest-neighbor scaling in different browsers
-            window.onload = function() {
-                var canvas = document.getElementById("canvas");
+        <!-- Builtin injector for injecting runner path -->
+        
 
-                // For 2D canvas context
-                var ctx = canvas.getContext("2d");
-                if (ctx) {
-                    ctx.imageSmoothingEnabled = false;
-                    ctx.webkitImageSmoothingEnabled = false;
-                    ctx.mozImageSmoothingEnabled = false;
-                }
+        <script>window.onload = GameMaker_Init;</script>
 
-                GameMaker_Init();
-            };
-        </script>
+        <!-- Builtin injector for injecting google analytics code -->
+        
+
     </body>
 
+    <!-- Custom PostBody code is injected here -->
+    
 </html>
